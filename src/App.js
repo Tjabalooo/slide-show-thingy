@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { Page } from './Page';
+import Pages from './Pages';
 
-function App() {
+const pageArray = [Pages.Equality, Pages.Decorate];
+
+export const App = () => {
+
+  const [pageIndex, setPageIndex] = useState(0);
+
+  const pageContent = pageArray[pageIndex];
+
+  const nextPage = () => {
+    if (pageIndex+1 < pageArray.length) {
+      setPageIndex(pageIndex+1);
+    }
+  };
+
+  const previousPage = () => {
+    if (pageIndex > 0) {
+      setPageIndex(pageIndex-1);
+    }
+  };
+
+  const nextButtonStyle = {
+    'position': 'relative',
+    'width': '40px',
+    'height': '30px',
+    'margin-bottom': '20px',
+    'margin-right': '20px'
+  };
+
+  const previousButtonStyle = {
+
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Page title={pageContent.Title} outputCallback={pageContent.Output} />
+      <div style={previousButtonStyle} onClick={previousPage}>BACK</div>
+      <div style={nextButtonStyle} onClick={nextPage}>NEXT</div>
+    </>
   );
 }
-
-export default App;
