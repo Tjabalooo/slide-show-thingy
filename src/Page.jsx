@@ -10,7 +10,7 @@ export const Page = ({title='...', outputCallback=()=>{return '...'}}) => {
     };
 
     const outputHeaderStyle = {
-        'fontSize': '80px'
+        'fontSize': '40px'
     };
 
     const outputParagraphStyle = {

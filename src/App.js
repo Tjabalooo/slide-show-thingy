@@ -3,12 +3,17 @@ import { Page } from './Page';
 import Pages from './Pages';
 
 const pageArray = [
-  Pages.Equality, 
+  Pages.Semicolon,
+  Pages.Equality,
+  Pages.Booleans,
+  Pages.VarAndLet, 
   Pages.Decorate, 
   Pages.ForLoops, 
+  Pages.Returns,
   Pages.Arrow, 
   Pages.Argument,
-  Pages.Returns
+  Pages.Promises,
+  Pages.SingleThread
 ];
 
 export const App = () => {
