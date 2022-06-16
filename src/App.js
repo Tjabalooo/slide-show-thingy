@@ -2,7 +2,14 @@ import { useState } from 'react';
 import { Page } from './Page';
 import Pages from './Pages';
 
-const pageArray = [Pages.Equality, Pages.Decorate, Pages.ForLoops];
+const pageArray = [
+  Pages.Equality, 
+  Pages.Decorate, 
+  Pages.ForLoops, 
+  Pages.Arrow, 
+  Pages.Argument,
+  Pages.Returns
+];
 
 export const App = () => {
 
@@ -27,8 +34,8 @@ export const App = () => {
     'width': '95%',
     'bottom': '10%',
     'display': 'flex',
-    'flex-wrap': 'nowrap',
-    'justify-content': 'space-between'
+    'flexWrap': 'nowrap',
+    'justifyContent': 'space-between'
   };
 
   const buttonStyle = {

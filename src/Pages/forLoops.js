@@ -38,9 +38,7 @@ const Output = () => {
     output.push('---');
     
     output.push('arr.map((value, i) => {...})');
-    output.push(...arr.map((value, i) => {
-        output.push(`   [${i}] ${value}`);
-    }));
+    output.push(...arr.map((value, i) => `   [${i}] ${value}`));
 
     return output;
 };
