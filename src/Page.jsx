@@ -4,8 +4,9 @@ export const Page = ({title='...', outputCallback=()=>{return '...'}}) => {
         'margin-right': 'auto',
         'margin-left': 'auto',
         'margin-top': '80px',
-        width: '60%',
-        'font-family': 'Helvetica'
+        'width': '60%',
+        'font-family': 'Helvetica',
+        'height': '100%'
     };
 
     const outputHeaderStyle = {
@@ -13,7 +14,9 @@ export const Page = ({title='...', outputCallback=()=>{return '...'}}) => {
     };
 
     const outputParagraphStyle = {
-        'font-size': '50px'
+        'font-size': '30px',
+        'line-height': '5px',
+        'white-space': 'pre'
     };
 
     return (

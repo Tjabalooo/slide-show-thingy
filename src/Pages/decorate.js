@@ -1,4 +1,4 @@
-const Title = 'Decorating';
+const Title = 'Decorating and Indexing';
 
 const Output = () => {
     
@@ -7,9 +7,15 @@ const Output = () => {
     person.FirstName = "Joakim";
     person.LastName = "Ernhagen";
 
-    person.Pocket = ['phone', 'wallet'];
+    person.FullName = () => `${person.FirstName} ${person.LastName}`;
 
-    return [person.FirstName, person['LastName'], person.Pocket.map((thing, i) => `[${i}: '${thing}'] `)];
+    return [
+        `person.FirstName: ${person.FirstName}`, 
+        '-',
+        `person['FirstName']: ${person['FirstName']}`,
+        '-',
+        `person.FullName(): ${person.FullName()}`
+    ];
 };
 
 

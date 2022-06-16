@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Page } from './Page';
 import Pages from './Pages';
 
-const pageArray = [Pages.Equality, Pages.Decorate];
+const pageArray = [Pages.Equality, Pages.Decorate, Pages.ForLoops];
 
 export const App = () => {
 
@@ -22,23 +22,27 @@ export const App = () => {
     }
   };
 
-  const nextButtonStyle = {
-    'position': 'relative',
-    'width': '40px',
-    'height': '30px',
-    'margin-bottom': '20px',
-    'margin-right': '20px'
+  const buttonAreaStyle = {
+    'position': 'fixed',
+    'width': '95%',
+    'bottom': '10%',
+    'display': 'flex',
+    'flex-wrap': 'nowrap',
+    'justify-content': 'space-between'
   };
 
-  const previousButtonStyle = {
-
+  const buttonStyle = {
+    'width': '80px',
+    'height': '40px'
   };
 
   return (
     <>
       <Page title={pageContent.Title} outputCallback={pageContent.Output} />
-      <div style={previousButtonStyle} onClick={previousPage}>BACK</div>
-      <div style={nextButtonStyle} onClick={nextPage}>NEXT</div>
+      <div style={buttonAreaStyle}>
+        <button style={buttonStyle} onClick={previousPage}>&#9664;&#9664;</button>
+        <button style={buttonStyle} onClick={nextPage}>&#9654;&#9654;</button>
+      </div>
     </>
   );
 }
